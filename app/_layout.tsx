@@ -60,26 +60,48 @@ export default function RootLayout() {
           style={styles.bannerImg}
           source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZlehOF0EnLGJDTPc3TrBz93V25TIul_sNrQ&s" }}
         />
+      </View>
+      <View style={styles.infoView}>
+
+        <MaterialIcons name="messenger-outline" size={24} color="#1e872e" />
+
+        <ThemedText style={styles.border}>|</ThemedText>
+        <MaterialIcons name="attach-money" size={24} color="#1e872e" />
 
 
-
-
-
-        <View style={styles.infoView}>
-
-          <MaterialIcons name="messenger-outline" size={24} color="#1e872e" />
-
-          <ThemedText style={styles.border}>|</ThemedText>
-          <MaterialIcons name="attach-money" size={24} color="#1e872e" />
+      </View>
+      {/* main Img Sec */}
+      <View style={styles.bottomContainer}>
+        <View style={styles.row}>
+          <Card title={"Carpool"} icon={"local-car-wash"} bgColor={"#9bb0c8"} />
+          <Card title={"Carpool"} icon={"local-car-wash"} bgColor={"#a4e2e2"} />
 
 
         </View>
+
+        <View style={styles.row}>
+          <Card title={"Carpool"} icon={"local-car-wash"} bgColor={"#cab8e9"} />
+          <Card title={"Carpool"} icon={"local-car-wash"} bgColor={"#d9a291"} />
+        </View>
+        <View style={styles.row}>
+          <Card title={"Carpool"} icon={"local-car-wash"} bgColor={"#efb3c2"} />
+          <Card title={"Carpool"} icon={"local-car-wash"} bgColor={"#d9d9d9"} />
+        </View>
+
       </View>
+
 
     </View>
 
 
   );
+}
+
+const Card = ({ title, icon, bgColor }: { title: string, icon: any, bgColor: string }) => {
+  return <View style={[styles.card, { backgroundColor: bgColor }]}>
+    <Text style={{ textAlign: "right", fontFamily: "monocpace", fontWeight: "bold" }}>{title}</Text>
+    <MaterialIcons name={icon} size={70} color="black" />
+  </View>
 }
 
 const styles = StyleSheet.create({
@@ -115,7 +137,7 @@ const styles = StyleSheet.create({
     height: "88%",
     borderRadius: 12,
   },
- 
+
   infoView: {
     color: "#1e872e",
     height: 45,
@@ -124,7 +146,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 12,
     backgroundColor: "#fff",
-    marginTop: 10,
+    marginTop: -15,
 
     marginHorizontal: 20,
     shadowColor: "#000000",
@@ -142,6 +164,24 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: "semibold",
     color: "grey",
-    
+
+  },
+  bottomContainer: {
+    flex: 1,
+    margin: 14,
+    gap: 10
+
+  },
+  row: {
+    flex: 1,
+    flexDirection: "row",
+    gap: 20
+  },
+  card: {
+    flex: 1,
+    borderWidth: 1,
+    borderRadius: 12,
+    padding: 10,
+    justifyContent: "space-between"
   },
 })
