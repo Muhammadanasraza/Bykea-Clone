@@ -58,7 +58,7 @@ export default function RootLayout() {
       <View style={styles.mainImg}>
         <Image
           style={styles.bannerImg}
-          source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZlehOF0EnLGJDTPc3TrBz93V25TIul_sNrQ&s" }}
+          source={{ uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC0PcAYwZop5rkf7LT3dp8bgaq3KztZ1VciQ&s" }}
         />
       </View>
       <View style={styles.infoView}>
@@ -73,33 +73,29 @@ export default function RootLayout() {
       {/* main Img Sec */}
       <View style={styles.bottomContainer}>
         <View style={styles.row}>
-          <Card title={"Carpool"} icon={"local-car-wash"} bgColor={"#9bb0c8"} />
-          <Card title={"Carpool"} icon={"local-car-wash"} bgColor={"#a4e2e2"} />
-
-
+          <Card title={"Carpool"} icon={"local-car-wash"} bgColor={"#cde4f6"} />
+          <Card title={"Bike"} icon={"pedal-bike"} bgColor={"#caffcc"} />
         </View>
 
         <View style={styles.row}>
-          <Card title={"Carpool"} icon={"local-car-wash"} bgColor={"#cab8e9"} />
-          <Card title={"Carpool"} icon={"local-car-wash"} bgColor={"#d9a291"} />
+          <Card title={"Admin"} icon={"admin-panel-settings"} bgColor={"#fbd1db"} />
+          <Card title={"MailBox"} icon={"markunread-mailbox"} bgColor={"#f3cefa"} />
         </View>
         <View style={styles.row}>
-          <Card title={"Carpool"} icon={"local-car-wash"} bgColor={"#efb3c2"} />
-          <Card title={"Carpool"} icon={"local-car-wash"} bgColor={"#d9d9d9"} />
+          <Card title={"Clock"} icon={"lock-clock"} bgColor={"#cae3ff"} />
+          <Card title={"Shopify"} icon={"shopify"} bgColor={"#fef7be"} />
         </View>
 
       </View>
 
 
     </View>
-
-
   );
 }
 
-const Card = ({ title, icon, bgColor }: { title: string, icon: any, bgColor: string }) => {
+const Card = ({ title, icon, bgColor  }: { title: string, icon: any, bgColor: string }) => {
   return <View style={[styles.card, { backgroundColor: bgColor }]}>
-    <Text style={{ textAlign: "right", fontFamily: "monocpace", fontWeight: "bold" }}>{title}</Text>
+    <Text style={{ textAlign: "right", fontFamily: " letterSpacing: 2",letterSpacing: 1, fontWeight: "bold" }}>{title}</Text>
     <MaterialIcons name={icon} size={70} color="black" />
   </View>
 }
@@ -168,7 +164,7 @@ const styles = StyleSheet.create({
   },
   bottomContainer: {
     flex: 1,
-    margin: 14,
+    margin: 12,
     gap: 10
 
   },
@@ -181,7 +177,7 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: 1,
     borderRadius: 12,
-    padding: 10,
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    padding: 10
   },
 })
